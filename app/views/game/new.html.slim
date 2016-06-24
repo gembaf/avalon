@@ -1,0 +1,13 @@
+h1 game setting page
+
+h3.page-header 参加者登録
+
+= form_tag game_main_path, class: 'form-group' do
+  .row
+    - 10.times do |i|
+      .col-xs-12.col-sm-6.col-md-4.col-lg-3
+        = text_field_tag "name[#{i}]", nil, class: 'form-control'
+  br
+  .center
+    button.btn.btn-primary Start
+
