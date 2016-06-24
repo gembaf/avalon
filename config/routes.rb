@@ -1,3 +1,6 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  root to: 'game#new'
+  post 'game' => 'game#create', as: :game_create
+  get 'game' => 'game#main', as: :game_main
 end
+
