@@ -40,6 +40,7 @@ group :development, :test do
   gem 'capybara'
 
   gem 'rubocop', require: false
+  gem 'codeclimate-test-reporter', require: false
 end
 
 group :development do
