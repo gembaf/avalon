@@ -19,7 +19,7 @@ AllCops:
     - '**/Rakefile'
     - '**/config.ru'
   Exclude:
-    - '.bundle/**/*'
+    - 'vendor/bundle/**/*'
     - 'config/**/*'
     - 'bin/**/*'
     - 'db/**/*'
