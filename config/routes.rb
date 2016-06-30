@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
-  root to: 'game#new'
-  post 'game' => 'game#create', as: :game_create
-  get 'game' => 'game#main', as: :game_main
+  get 'games/:group_name' => 'games#main', as: :games_main
+
+  get 'groups' => 'groups#new'
+  post 'groups' => 'groups#create'
+
+  get 'groups/:group_name/users' => 'users#new', as: :users
+  patch 'groups/:group_name/users' => 'users#create'
 end
 
