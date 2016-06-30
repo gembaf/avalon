@@ -1,6 +1,8 @@
-User.create(name: 'hoge')
-User.create(name: 'foo')
-User.create(name: 'bar')
-User.create(name: 'piyo')
-User.create(name: 'fuga')
+
+group = Group.create(name: 'test', capacity: 5)
+group.users << User.create(name: 'hoge')
+group.users << User.create(name: 'foo')
+group.users << User.create(name: 'bar')
+group.users << User.create(name: 'piyo')
+group.users << User.create(name: 'fuga')
 

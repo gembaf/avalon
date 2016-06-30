@@ -11,7 +11,8 @@ class UsersController < ApplicationController
     users.each do |user|
       group.users << User.create(name: user[:name])
     end
-    redirect_to games_main_path(group_name: params[:group_name])
+    name = group.users.first.name
+    redirect_to games_main_path(group_name: params[:group_name], user_name: name)
   end
 end
 

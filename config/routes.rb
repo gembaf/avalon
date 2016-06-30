@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  get 'games/:group_name' => 'games#main', as: :games_main
+  root to: 'games#new'
+  post 'login' => 'games#login', as: :login
+  get 'games/:group_name/:user_name' => 'games#main', as: :games_main
 
   get 'groups' => 'groups#new'
   post 'groups' => 'groups#create'

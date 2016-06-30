@@ -47,12 +47,8 @@ feature '参加者の登録' do
       expect(page).to have_content 'game main page'
     end
 
-    scenario '参加者の名前が表示される' do
+    scenario 'ホストとしてログインされる' do
       expect(page).to have_content 'hoge'
-      expect(page).to have_content 'foo'
-      expect(page).to have_content 'bar'
-      expect(page).to have_content 'piyo'
-      expect(page).to have_content 'fuga'
     end
 
     feature '参加者の登録ページヘ戻る' do
