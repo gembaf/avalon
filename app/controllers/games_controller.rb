@@ -7,7 +7,7 @@ class GamesController < ApplicationController
   end
 
   def main
-    group = Group.find_by_name(params[:group_name])
+    @group = Group.find_by_name(params[:group_name])
     @user = User.where(name: params[:user_name]).first
   end
 end
