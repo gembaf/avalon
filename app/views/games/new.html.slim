@@ -1,0 +1,12 @@
+h2.page-header ログイン
+
+= form_tag login_path, class: 'form-group' do
+  = label :group_name, 'グループ名'
+  = text_field_tag :group_name, nil, class: 'form-control'
+  br
+  = label :user_name, 'ユーザ名'
+  = text_field_tag :user_name, nil, class: 'form-control'
+  br
+  .center
+    button.btn.btn-primary Login
+
