@@ -18,6 +18,8 @@ Bundler.require(*Rails.groups)
 
 module Avalon
   class Application < Rails::Application
+    config.autoload_paths += %W(#{config.root}/app/models/charactors)
+
     config.generators do |g|
       g.assets false
       g.helper false

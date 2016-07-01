@@ -1,0 +1,23 @@
+h2.page-header ロール選択
+
+= form_tag role_path, class: 'form-group' do
+  .row
+    .col-xs-12.col-md-6
+      h3.page-header style="color: blue" 正義陣営
+      - CharactorList.justice.each do |id, charactor|
+        .col-xs-12
+          label
+            = check_box_tag 'role[]', id
+            = charactor.name
+    .col-xs-12.col-md-6
+      h3.page-header style="color: red" 邪悪陣営
+      - CharactorList.evil.each do |id, charactor|
+        .col-xs-12
+          label
+            = check_box_tag 'role[]', id
+            = charactor.name
+  .row
+    br
+    .center
+      button.btn.btn-primary 決定
+
