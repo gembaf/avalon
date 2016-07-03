@@ -8,5 +8,8 @@ Rails.application.routes.draw do
 
   get 'groups/:group_name/users' => 'users#new', as: :users
   patch 'groups/:group_name/users' => 'users#create'
+
+  get 'groups/:group_name/role' => 'role#new', as: :role
+  post 'groups/:group_name/role' => 'role#create'
 end
 

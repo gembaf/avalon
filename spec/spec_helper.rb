@@ -1,4 +1,6 @@
 require 'codeclimate-test-reporter'
+require 'capybara/rspec'
+require 'capybara/poltergeist'
 require 'database_cleaner'
 
 CodeClimate::TestReporter.start
@@ -10,6 +12,12 @@ RSpec.configure do |config|
 
   config.mock_with :rspec do |mocks|
     mocks.verify_partial_doubles = true
+  end
+
+  # Capybara.default_driver = :poltergeist
+  Capybara.javascript_driver = :poltergeist
+  Capybara.register_driver :poltergeist do |app|
+    Capybara::Poltergeist::Driver.new(app, js_errors: true)
   end
 
   config.before :suite do

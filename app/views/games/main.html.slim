@@ -1,4 +1,16 @@
 h1 game main page
 
-= @user.name
+p= @user.name
+p= @user.role.name
+
+table.table.table-border
+  tbody
+    tr
+      th ユーザ名
+      th ロール
+    - @group.users.each do |user|
+      - next if @user.id == user.id
+      tr
+        td= user.name
+        td= user.role.display_name(@user.role_id)
 

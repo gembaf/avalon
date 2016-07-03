@@ -38,6 +38,8 @@ group :development, :test do
   gem 'rspec-rails', '~> 3.5.0.beta4'
   gem 'database_cleaner'
   gem 'capybara'
+  gem 'factory_girl_rails'
+  gem 'poltergeist'
 
   gem 'rubocop', require: false
   gem 'codeclimate-test-reporter', require: false

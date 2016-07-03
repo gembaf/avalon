@@ -1,6 +1,5 @@
 feature '参加者の登録' do
-  given(:group) { Group.create(name: 'hoge_group', capacity: capacity) }
-  given(:capacity) { 5 }
+  given(:group) { create(:group) }
 
   background do
     visit users_path(group_name: group.name)
@@ -23,7 +22,11 @@ feature '参加者の登録' do
     end
 
     context '参加者が10人の場合' do
-      given(:capacity) { 10 }
+      given(:group) { create(:group, capacity: 10, name: 'hoge_group') }
+
+      background do
+        visit users_path(group_name: group.name)
+      end
 
       scenario 'フォームが10個存在する' do
         expect(page).to have_content 'ホスト'
@@ -43,12 +46,8 @@ feature '参加者の登録' do
       click_button 'Start'
     end
 
-    scenario 'ゲーム画面に遷移する' do
-      expect(page).to have_content 'game main page'
-    end
-
-    scenario 'ホストとしてログインされる' do
-      expect(page).to have_content 'hoge'
+    scenario 'ロール選択画面に遷移する' do
+      expect(page).to have_content 'ロール選択'
     end
 
     feature '参加者の登録ページヘ戻る' do
