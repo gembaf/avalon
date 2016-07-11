@@ -124,9 +124,14 @@ GEM
       coderay (~> 1.1.0)
       method_source (~> 0.8.1)
       slop (~> 3.4)
+    pry-byebug (3.4.0)
+      byebug (~> 9.0)
+      pry (~> 0.10)
     pry-rails (0.3.4)
       pry (>= 0.9.10)
     puma (3.4.0)
+    quiet_assets (1.1.0)
+      railties (>= 3.1, < 5.0)
     rack (2.0.0.rc1)
       json
     rack-test (0.6.3)
@@ -249,7 +254,6 @@ PLATFORMS
 DEPENDENCIES
   bootstrap-sass (~> 3.3.6)
   bootswatch-rails
-  byebug
   capybara
   codeclimate-test-reporter
   coffee-rails (~> 4.1.0)
@@ -260,8 +264,10 @@ DEPENDENCIES
   listen (~> 3.0.5)
   pg (~> 0.18)
   poltergeist
+  pry-byebug
   pry-rails
   puma (~> 3.0)
+  quiet_assets
   rails (>= 5.0.0.rc2, < 5.1)
   rspec-rails (~> 3.5.0.beta4)
   rubocop
