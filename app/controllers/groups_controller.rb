@@ -1,12 +1,14 @@
 class GroupsController < ApplicationController
   def new
+    session[:group_id] = nil
     @group = Group.new
   end
 
   def create
     @group = Group.new(group_params)
     render 'new' && return unless @group.save
-    redirect_to users_path(group_name: @group.name)
+    session[:group_id] = @group.id
+    redirect_to users_path
   end
 
   private
