@@ -1,15 +1,16 @@
 Rails.application.routes.draw do
-  root to: 'games#new'
-  post 'login' => 'games#login', as: :login
-  get 'games/:group_name/:user_name' => 'games#main', as: :games_main
+  root to: 'session#new'
+  post 'login' => 'session#login'
 
   get 'groups' => 'groups#new'
   post 'groups' => 'groups#create'
 
-  get 'groups/:group_name/users' => 'users#new', as: :users
-  patch 'groups/:group_name/users' => 'users#create'
+  get 'users' => 'users#new'
+  patch 'users' => 'users#create'
 
-  get 'groups/:group_name/role' => 'role#new', as: :role
-  post 'groups/:group_name/role' => 'role#create'
+  get 'role' => 'role#new'
+  post 'role' => 'role#create'
+
+  get 'games' => 'games#main'
 end
 

@@ -1,8 +1,6 @@
 feature '参加者の登録' do
-  given(:group) { create(:group) }
-
   background do
-    visit users_path(group_name: group.name)
+    create_group('hoge_group')
   end
 
   scenario '画面が表示される' do
@@ -22,10 +20,8 @@ feature '参加者の登録' do
     end
 
     context '参加者が10人の場合' do
-      given(:group) { create(:group, capacity: 10, name: 'hoge_group') }
-
       background do
-        visit users_path(group_name: group.name)
+        create_group('hoge_group10', 10)
       end
 
       scenario 'フォームが10個存在する' do
@@ -52,7 +48,7 @@ feature '参加者の登録' do
 
     feature '参加者の登録ページヘ戻る' do
       background do
-        visit users_path(group_name: group.name)
+        visit users_path
       end
 
       scenario 'フォームが5個存在する' do
