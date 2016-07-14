@@ -14,10 +14,15 @@ RSpec.configure do |config|
     mocks.verify_partial_doubles = true
   end
 
-  # Capybara.default_driver = :poltergeist
   Capybara.javascript_driver = :poltergeist
   Capybara.register_driver :poltergeist do |app|
     Capybara::Poltergeist::Driver.new(app, js_errors: true)
+  end
+  Capybara.register_server :puma do |app, port, host|
+    require 'puma'
+    Puma::Server.new(app).tap do |s|
+      s.add_tcp_listener host, port
+    end.run.join
   end
 
   config.before :suite do
